@@ -3,8 +3,8 @@ Exam 2, problem 1.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Aaryan Khatri.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import testing_helper
 import time
@@ -12,10 +12,10 @@ import time
 
 def main():
     """ Calls the   TEST   functions in this module. """
-    # run_test_problem1a()
-    # run_test_problem1b()
-    # run_test_problem1c()
-    # run_test_problem1d()
+    run_test_problem1a()
+    run_test_problem1b()
+    run_test_problem1c()
+    run_test_problem1d()
 
 
 ###############################################################################
@@ -148,6 +148,12 @@ def problem1a(sequence):
     # TODO: 3. Implement and test this function.
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
+    result = []
+    for k in range(len(sequence)):
+        result = sequence[0] + sequence[len(sequence) - 1]
+
+        return result
+
 
 
 def run_test_problem1b():
@@ -297,6 +303,14 @@ def problem1b(strings):
     #          Tests have been written for you (above).
     ###########################################################################
 
+    result = ''
+    for k in range(len(strings)):
+        if is_prime(len(strings[k])) == True:
+            result = result + (strings[k])
+            return result
+
+    return []
+
 
 def run_test_problem1c():
     """ Tests the   problem1c   function. """
@@ -392,6 +406,13 @@ def problem1c(integers):
     # TODO: 4. Implement and test this function.
     #          Tests have been written for you (above).
     ###########################################################################
+
+    for k in range(len(integers)):
+        if integers[k] <  k:
+            return integers[k]
+
+    return 999
+
 
 
 def run_test_problem1d():
@@ -523,9 +544,16 @@ def problem1d(t, sequence):
            FOR HELP if this problem's specification is not clear to you.
      """
     ###########################################################################
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #          Tests have been written for you (above).
     ###########################################################################
+    result = 1
+    for k in range(int(len(sequence)//2), len(sequence), 1):
+        if sum_of_digits(sequence[k]) > t:
+            result = result * sequence[k]
+
+    return 1
+
 
 
 ###############################################################################
